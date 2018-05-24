@@ -2,16 +2,29 @@
 
 namespace IIIF\Model;
 
+/**
+ * Class modeling image resources within the <a href ="http://iiif.io/api/presentation/2.1/#resource-type-overview">IIIF Presentation API</a>
+ */
 class ImageResource
 {
-    use WithMetaData;
-    private $service;
-    private $id;
-    private $type;
-    private $format;
-    private $height;
-    private $width;
 
+    use WithMetaData;  /**< Mixes in the WithMetaData Trait */
+    private $service; /**< ImageService object modeling the IIIF image service providing image content */
+    private $id; /**< URI for the resource */
+    private $type; /**< string for the resource type */
+    private $format; /**< string for the image format */
+    private $height; /**< int for the image height */
+    private $width; /**< int for the image width */
+
+    /**
+     * Constructor
+     * @param string $id URI for the resource
+     * @param string $type resource type
+     * @param string $format image format
+     * @param int $height image height
+     * @param int $width image width
+     * @param ImageService $service object modeling the IIIF image service providing image content
+     */
     public function __construct(
         string $id,
         string $type = null,
@@ -28,6 +41,11 @@ class ImageResource
         $this->width = $width;
     }
 
+    /**
+     * Construct an object from an array of values
+     * @param array $resource array of values being used to construct an ImageResource
+     * @return ImageResource
+     */
     public static function fromArray($resource) : self
     {
         $service = $resource['service'];
@@ -44,6 +62,10 @@ class ImageResource
         );
     }
 
+    /**
+     * Accessor method for the IIIF image service object
+     * @return ImageResource
+     */
     public function getService()
     {
         return $this->service;
