@@ -18,11 +18,11 @@ class Canvas
 
     /**
      * Constructor
-     * @param string $id
-     * @param string $label
-     * @param string $thumbnail
-     * @param int $height
-     * @param int $width
+     * @param string $id URI for this Canvas
+     * @param string $label label provided for this Canvas
+     * @param string $thumbnail URI for the thumbnail used on this canvas
+     * @param int $height height for this Canvas
+     * @param int $width width for this Canvas
      * @param array<Image> $images
      */
     public function __construct(string $id, string $label, string $thumbnail = null, int $height, int $width, array $images)

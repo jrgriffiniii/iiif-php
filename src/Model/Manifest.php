@@ -3,7 +3,7 @@
 namespace IIIF\Model;
 
 /**
- * Class modeling manifests for image resources within the <a href ="http://iiif.io/api/presentation/2.0/#manifest">IIIF Presentation API</a>
+ * Class modeling manifests for image resources within the <a href ="http://iiif.io/api/presentation/2.1/#manifest">IIIF Presentation API</a>
  */
 class Manifest
 {
